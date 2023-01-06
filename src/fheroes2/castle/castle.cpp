@@ -258,7 +258,8 @@ void Castle::LoadFromMP2( const std::vector<uint8_t> & data )
 
     // custom name
     st.skip( 1 );
-    name = st.toString( 13 );
+    std::string castleName = st.toString( 13 );
+    name = _( castleName );
 
     // race
     uint32_t kingdom_race = Players::GetPlayerRace( GetColor() );
